@@ -1,0 +1,30 @@
+<h1 style="text-align: center;">
+    <a href="/">Chefs</a> | Dishes
+</h1>
+<a href="/new/dish"><button class="btn btn-primary">Add a Dish</button></a>
+
+<u><h3>Yum, take a look at our tasty dishes!</h3></u>
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Chef</th>
+        <th scope="col">Tastiness</th>
+        <th scope="col">Calories</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var dish in @ViewBag.AllDishes)
+        {
+            <tr>
+            <th scope="row">@dish.DishId</th>
+            <td>@dish.Name</td>
+            <td>@dish.Creator.FName @dish.Creator.LName</td>
+            <td>@dish.Tastiness</td>
+            <td>@dish.Calories</td>
+            </tr>
+        }
+    </tbody>
+</table>
